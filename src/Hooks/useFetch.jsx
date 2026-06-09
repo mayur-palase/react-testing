@@ -18,9 +18,5 @@ export default function useFetch(url) {
         fetchDataAsUrl(url);
     }, [url])
 
-    if(loading) <div>Loading...</div>
-
-    if(error) return error;
-
     return {data, loading, error}
 }

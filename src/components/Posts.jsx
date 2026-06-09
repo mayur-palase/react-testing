@@ -8,9 +8,14 @@ function Posts({data, error, loading}) {
     // const [data, error, loading] = withFetch('https://jsonplaceholder.typicode.com/posts')
 
     // This is example of custom hook
-    const {data: postsData} = useFetch('https://jsonplaceholder.typicode.com/posts?_page=1&_limit=10');
+    const {data: postsData, loading: loadingPosts} = useFetch('https://jsonplaceholder.typicode.com/posts?_page=1&_limit=10');
 
     console.log(data);
+
+    
+   if (loading) return <div>Loading...</div>;
+   if (error) return <div>{error}</div>;
+
 
   return (
     <>

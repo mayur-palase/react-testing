@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import { withAuth } from "./HOC/withAuth";
 import Posts from "./components/Posts";
 import withFetch from "./HOC/withFetch";
+import Users from "./components/Users";
 
 const App = () => {
 
@@ -19,15 +20,13 @@ const App = () => {
   
   return (
     <>
-      {/* <h1>GraphQL React App</h1>
-      <UserList /> */}
         <BrowserRouter>
-
           <nav style={{ padding: '20px', display: "flex", gap: "24px", background: "#eee" }}>
             <Link to='/'>Home</Link>
             <Link to='/about'>About</Link>
             <Link to='/dashboard'>Dashboard</Link>
             <Link to='/posts'>Posts</Link>
+            <Link to='/users'>Users</Link>
           </nav>
 
           <Routes>
@@ -50,6 +49,10 @@ const App = () => {
             <Route 
               path="/posts"
               element={<HOCPosts />}
+            />
+            <Route 
+              path="/users"
+              element={<Users />}
             />
           </Routes>
         </BrowserRouter>
